@@ -61,6 +61,12 @@ def clear_pdf_folder(folder="pdf"):
         print(f"[WARNING] Folder '{folder}' does not exist.")
 
 # Call the function
+@app.route('/test', methods=['GET'])
+def test_api():
+    return jsonify({
+        'status': 'success',
+        'message': 'GET API is working!'
+    }), 200
 
 def setup_driver():
     options = webdriver.ChromeOptions()
